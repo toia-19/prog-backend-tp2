@@ -17,14 +17,14 @@ const { generateJwt } = require("../middlewares/jwt");
 const getOne = async (req = request, res = response) => {
     // Solicitamos por párametro del request, el ID:
     // const { id } = req.params; <- destructuración del objeto
-    const id = req.params.id;
+    const id_user = req.params.id_user;
 
     console.log("Parámetros", req.params);
 
-    console.log("ID provisto?", id);
+    console.log("ID provisto?", id_user);
 
     // Si el ID no es dado por el usuario, se mostrará un mensaje de error 404
-    if (!id) {
+    if (!id_user) {
         res.status(404).json({ ok: false, msg: "El parámetro no fue provisto" });
     }
 
@@ -33,7 +33,7 @@ const getOne = async (req = request, res = response) => {
     try {
         const connection = await getConnection();
         const [result] = await connection.query(
-            "SELECT * FROM usuario WHERE id_user = ?", id
+            "SELECT * FROM usuario WHERE id_user = ?", id_user
         );
 
         res.status(200).json({ ok: true, result, msg: "approved" });

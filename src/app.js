@@ -5,9 +5,14 @@ const morgan = require("morgan");
 const fileUpload = require("express-fileupload");
 var cors = require("cors");
 
-// Rutas
-const users = require("./routes/users.routes");
-const files = require("./routes/upload-file.routes");
+// Rutas de usuarios
+const users = require("./routes/user.routes");
+
+// Rutas de pagos
+const payment = require("./routes/payment.routes");
+
+// Rutas de archivos
+const files = require("./routes/file.routes");
 
 // Express: núcleo del proyecto
 const app = express();

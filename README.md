@@ -3,3 +3,6 @@ _ITS CIPOLLETTI - Programación Backend_.
 
 _Diagrama de MER_.
 ![MER - Sistema de Gestión de Pagos](/src/assets/sistema_gestion_MER.png)
+
+_Comando de renderización_.
+* nodemon src/index.js

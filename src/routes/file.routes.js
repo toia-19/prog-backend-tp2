@@ -8,7 +8,7 @@ const { authenticateJWT } = require("../middlewares/jwt");
 
 const router = Router();
 
-// Rutas definidas para acciones en pagos
+// Ruta definida para subir archivos -> POST
 router.post("/file/upload", methods.uploadFiles);
 
 // Exportación de rutas
